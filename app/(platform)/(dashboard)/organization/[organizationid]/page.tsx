@@ -1,16 +1,6 @@
-import {db} from "@/lib/db"
+import { create } from "@/actions/create-board";
 const OrganizationIdPage = async () => {
-	async function create(formData:FormData) {
-		"use server";
-    const title = formData.get("title") as string
-		console.log("I am in server");
-
-    await db.board.create({
-      data:{
-        title,
-      }
-    })
-	}
+	
 	return (
 		<div className="w-full mb-20">
 			<form action={create}>
